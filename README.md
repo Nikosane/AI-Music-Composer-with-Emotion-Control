@@ -21,44 +21,7 @@ AI Music Composer with Emotion Control is a Python-based project that uses Gener
 - **Data Management:** JSON
 - **Modeling:** LSTM Neural Networks
 
----
 
-## 🚀 Project Structure
-```
-AI_Music_Composer/
-│
-├── main.py                          # Entry point for running the application
-├── config.py                        # Configuration settings for model, emotions, and MIDI
-├── requirements.txt                 # List of dependencies
-│
-├── data/
-│   ├── midi_files/                  # Collection of MIDI files for training
-│   └── emotions.json                # Mapping of MIDI files to emotions
-│
-├── models/
-│   ├── emotion_composer.py          # Core generative model
-│   ├── lstm_model.py                # LSTM-based generative AI for music composition
-│   └── emotion_classifier.py        # Model to classify and interpret emotions
-│
-├── preprocessing/
-│   ├── midi_processor.py            # MIDI file parsing and data preprocessing
-│   ├── data_loader.py               # Loads and prepares data for training
-│   └── feature_extractor.py         # Extracts relevant features from MIDI data
-│
-├── training/
-│   ├── train_composer.py            # Train the music generation model
-│   ├── train_classifier.py          # Train the emotion classifier model
-│   └── evaluation.py                # Evaluate model performance
-│
-├── utils/
-│   ├── midi_utils.py                # Utilities for MIDI manipulation
-│   ├── audio_converter.py           # Convert MIDI to audio (optional)
-│   └── emotion_mapping.py           # Helper functions for emotion mapping
-│
-└── outputs/
-    ├── generated_music/             # Generated MIDI or audio files
-    └── logs/                        # Logs and model performance metrics
-```
 
 ---
 
