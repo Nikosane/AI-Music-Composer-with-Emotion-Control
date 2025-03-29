@@ -1,0 +1,22 @@
+# Requirements for AI Music Composer with Emotion Control
+
+# Core Libraries
+numpy
+scipy
+pandas
+
+# Deep Learning and AI
+tensorflow
+keras
+
+# Music Processing
+mido
+music21
+
+# Utilities
+matplotlib
+seaborn
+
+# Optional (For converting MIDI to audio)
+pydub
+
