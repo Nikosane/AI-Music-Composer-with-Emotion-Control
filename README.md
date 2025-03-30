@@ -84,5 +84,3 @@ Contributions are welcome! If you'd like to contribute, follow these steps:
 For questions or issues, reach out via GitHub Issues or contact the author at [niteshkotian3@gmail.com](mailto:niteshkotian3@gmail.com).
 
 Happy composing! 🎵
-
-temp1
