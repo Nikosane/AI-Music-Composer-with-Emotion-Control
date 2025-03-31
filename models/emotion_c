@@ -1,0 +1,43 @@
+import numpy as np
+import tensorflow as tf
+from tensorflow.keras import layers, models
+
+class EmotionClassifier:
+    def __init__(self, input_shape=(None, 128), num_classes=6, model_path='models/saved/classifier_model.h5'):
+        self.input_shape = input_shape
+        self.num_classes = num_classes
+        self.model_path = model_path
+        self.model = self.build_model()
+        self.load_model()
+
+    def build_model(self):
+        model = models.Sequential([
+            layers.LSTM(128, return_sequences=True, input_shape=self.input_shape),
+            layers.Dropout(0.3),
+            layers.LSTM(128),
+            layers.Dropout(0.3),
+            layers.Dense(64, activation='relu'),
+            layers.Dense(self.num_classes, activation='softmax')
+        ])
+        model.compile(
+            loss='sparse_categorical_crossentropy',
+            optimizer='adam',
+            metrics=['accuracy']
+        )
+        return model
+
+    def load_model(self):
+        try:
+            self.model.load_weights(self.model_path)
+            print(f"Loaded classifier model from {self.model_path}")
+        except Exception as e:
+            print(f"Failed to load model: {e}")
+
+    def predict_emotion(self, midi_data):
+        midi_data = np.array(midi_data).reshape((1, -1, 128))
+        prediction = self.model.predict(midi_data)
+        return np.argmax(prediction)
+
+if __name__ == '__main__':
+    classifier = EmotionClassifier()
+    print("Emotion Classifier initialized.")
