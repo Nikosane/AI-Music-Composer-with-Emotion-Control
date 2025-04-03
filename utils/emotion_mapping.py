@@ -15,3 +15,11 @@ def map_emotion_to_label(emotion, emotion_mapping):
     :param emotion_mapping: Dictionary containing emotion-to-label mappings.
     """
     return emotion_mapping.get(emotion.lower(), -1)
+
+
+
+if __name__ == "__main__":
+    mapping = load_emotion_mapping()
+    test_emotion = "Happy"
+    label = map_emotion_to_label(test_emotion, mapping)
+    print(f"Emotion: {test_emotion} -> Label: {label}")
